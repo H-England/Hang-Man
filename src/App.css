@@ -1,38 +1,108 @@
+*{
+  box-sizing: border-box;
+  
+}
+#site { overflow-x: hidden !important;}
+
+.home{
+  margin: 0;
+  background-color: #222;
+  height: 108.25rem;
+}
+.header{
+  background-color: #111;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding-left: 2rem;
+}
+.header ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  
+  font-size: 1.5rem;
+}
+.header ul li{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+}
+.header h1{
+  font-size: 4rem;
+  background-color: inherit;
+}
+.start{
+  background-color: rgb(12, 90, 10);
+}
+.start:hover{
+  background-color: rgb(13, 124, 11);
+  cursor: pointer;
+}
+
+.newword{
+  background-color: rgb(90, 10, 10);
+}
+.newword:hover{
+  background-color: rgb(136, 9, 9);
+  cursor: pointer;
+}
+
+.help{
+  background-color:rgb(18, 101, 209) ;
+}
+.help:hover{
+  background-color:rgb(66, 142, 241) ;
+  cursor: pointer;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.helpbox{
   display: flex;
-  flex-direction: column;
+  position: fixed;
+  z-index: 1; /* Sit on top */
+  border-radius: 50px;
+  top: 50%;
+  left: 50%;
+  width: 50%; /* Full width */
+  height: 50%; /* Full height */
+  transform: translate(-50%, -50%) ;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+.helpcont{
+  margin: 10% auto;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 10px;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.helpcont ul{
+  font-size: 1.5rem;
+  gap: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.close {
+  float: right;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
