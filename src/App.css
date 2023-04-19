@@ -9,6 +9,12 @@
   background-color: #222;
   height: 108.25rem;
 }
+.hangmancontainer{
+  margin: 0;
+  background-color: #222;
+  color: white;
+}
+
 .header{
   background-color: #111;
   color: white;
@@ -95,6 +101,23 @@
   gap: 1rem;
 }
 
+.helpcont li{
+  padding: 2rem;
+}
+
+.helpcont h3{
+  background-color: #444;
+  width: 90%;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 20px;
+  padding: 10px 10px;
+  border-radius: 10px;
+
+}
+
 .close {
   float: right;
   font-weight: bold;
@@ -105,4 +128,15 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.figure-container {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+.figure-part {
+  display: none;
 }

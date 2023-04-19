@@ -1,17 +1,25 @@
 import './App.css';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { Figure as Hangman } from './components/Figure';
 import { useState } from 'react';
 import { helpNotification as help } from './helpers/helpers';
 import Rules from './components/Rules';
+import WrongLetters from './components/WrongLetters';
+import RandomWordSelector from './components/Words';
 
 function App() {
-  const [showHelp, setShowHelp] = useState(false)
+  const [showHelp, setShowHelp] = useState(false);
+  const [currentWord, setCurrentWord] = useState("");
+
+  const handleWordSelected = (word) => {
+    setCurrentWord(word);
+  };
 
   const showHelpHandler = () => {
-    setShowHelp(!showHelp)
-  }
+    setShowHelp(!showHelp);
+  };
+
   return (
     <div className='home'>
       <body className='App-header'>
@@ -19,16 +27,20 @@ function App() {
           <h1>Hang-man</h1>
           <ul>
             <li className='start'>Start</li>
-            <li className='newword'>New Word</li>          
-            <li className='help' onClick={showHelpHandler}>Help</li>
-            
+            <RandomWordSelector onWordSelected={handleWordSelected} />
+            <li className='help' onClick={showHelpHandler}>
+              Help
+            </li>
           </ul>
         </div>
-        {showHelp && <Rules onClose={showHelpHandler}/>}
+        <div className='hangmancontainer'>
+          {/* <Hangman/> */}
+          <WrongLetters />
+          {currentWord && <p>{currentWord}</p>}
+        </div>
+        {showHelp && <Rules onClose={showHelpHandler} />}
       </body>
     </div>
-  )
+  );
 }
-  
-
 export default App;
