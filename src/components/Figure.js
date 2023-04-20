@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Figure = ({ wrongLetters }) => {
+const Hangman = ({ wrongLetters }) => {
   const errors = wrongLetters.length
 
   return (
@@ -37,4 +37,4 @@ const Figure = ({ wrongLetters }) => {
   )
 }
 
-export default Figure
+export default Hangman
