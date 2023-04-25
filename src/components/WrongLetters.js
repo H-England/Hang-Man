@@ -1,6 +1,11 @@
 import React from 'react'
 
 const WrongLetters = ({ wrongLetters }) => {
+
+  if(wrongLetters.length === 0){
+    return null
+  }
+  
   return (
     <div className="wrong-letters-container">
       <div>

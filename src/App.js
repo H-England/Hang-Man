@@ -9,6 +9,8 @@ import RandomWordSelector from './components/Words';
 import DisplayWord from './components/DisplayWord';
 import Hangman from './components/Figure';
 
+
+
 function App() {
   const [showHelp, setShowHelp] = useState(false)
   const [currentWord, setCurrentWord] = useState("")
@@ -46,14 +48,25 @@ function App() {
     return () => window.removeEventListener('keydown', handleKeydown)
   }, [correctLetters, wrongLetters, playable])
   
+  function resetLetters() {
+    setWrongLetters([])
+    setCorrectLetters([])
+
+  }
 
   const handleWordSelected = (word) => {
     setCurrentWord(word)
+    setWrongLetters([])
+    setCorrectLetters([])
   };
 
   const showHelpHandler = () => {
     setShowHelp(!showHelp)
   };
+
+  const handleNewWordClick = () => {
+    resetLetters()
+  }
 
   return (
     <div className='home'>
@@ -61,15 +74,17 @@ function App() {
         <div className='header'>
           <h1>Hang-man</h1>
           <ul>
-            <li className='start'>Start</li>
-            <RandomWordSelector onWordSelected={handleWordSelected} />
+            <li className='start' onClick={resetLetters}>Start</li>
+            <RandomWordSelector onWordSelected={handleWordSelected} onNewWordClick={handleNewWordClick}/>
             <li className='help' onClick={showHelpHandler}>
               Help
             </li>
           </ul>
         </div>
+        <div>
         <div className='hangmancontainer'>
-          {/* <Hangman/> */}
+          <Hangman wrongLetters={wrongLetters}/>
+        </div>
           <WrongLetters wrongLetters={wrongLetters} />
           {currentWord && <p>{currentWord}</p>}
           <DisplayWord currentWord={currentWord} correctLetters={correctLetters}/>
