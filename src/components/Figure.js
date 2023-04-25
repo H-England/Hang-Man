@@ -4,7 +4,7 @@ const Hangman = ({ wrongLetters }) => {
   const errors = wrongLetters.length
 
   return (
-    <svg height="250" width="200" className="figure-container">
+    <svg height="250" width="200" className="figurecontainer">
       {/* <!-- Base --> */}
       {errors > 0 &&
         <line x1="20" y1="230" x2="100" y2="230" />

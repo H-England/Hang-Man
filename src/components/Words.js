@@ -17,6 +17,7 @@ function RandomWordSelector(props) {
     const randomIndex = Math.floor(Math.random() * words.length)
     const randomWord = words[randomIndex]
     props.onWordSelected(randomWord)
+    console.log(randomWord)
   }
 
   return (

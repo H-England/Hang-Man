@@ -58,6 +58,7 @@ function App() {
     setCurrentWord(word)
     setWrongLetters([])
     setCorrectLetters([])
+    
   };
 
   const showHelpHandler = () => {
@@ -84,10 +85,10 @@ function App() {
         <div>
         <div className='hangmancontainer'>
           <Hangman wrongLetters={wrongLetters}/>
+          <DisplayWord currentWord={currentWord} correctLetters={correctLetters}/>
         </div>
           <WrongLetters wrongLetters={wrongLetters} />
-          {currentWord && <p>{currentWord}</p>}
-          <DisplayWord currentWord={currentWord} correctLetters={correctLetters}/>
+          
         </div>
         {showHelp && <Rules onClose={showHelpHandler} />}
       </div>
