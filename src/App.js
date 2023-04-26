@@ -75,7 +75,6 @@ function App() {
         <div className='header'>
           <h1>Hang-man</h1>
           <ul>
-            <li className='start' onClick={resetLetters}>Start</li>
             <RandomWordSelector onWordSelected={handleWordSelected} onNewWordClick={handleNewWordClick}/>
             <li className='help' onClick={showHelpHandler}>
               Help

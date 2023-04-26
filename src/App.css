@@ -45,19 +45,13 @@
   font-size: 4rem;
   background-color: inherit;
 }
-.start{
-  background-color: rgb(12, 90, 10);
-}
-.start:hover{
-  background-color: rgb(13, 124, 11);
-  cursor: pointer;
-}
+
 
 .newword{
-  background-color: rgb(90, 10, 10);
+  background-color: rgb(12, 90, 10);
 }
 .newword:hover{
-  background-color: rgb(136, 9, 9);
+  background-color: rgb(13, 124, 11);
   cursor: pointer;
 }
 
@@ -133,13 +127,6 @@
   cursor: pointer;
 }
 
-.figure-container {
-  fill: transparent;
-  stroke: #fff;
-  stroke-width: 4px;
-  stroke-linecap: round;
-}
-
 .figure-part {
   display: none;
 }
@@ -155,12 +142,12 @@
 .letter {
   border-bottom: 3px solid #2980b9;
   display: inline-flex;
-  font-size: 30px;
+  font-size: 45px;
   align-items: center;
   justify-content: center;
   margin: 0 3px;
   height: 50px;
-  width: 20px;
+  width: 60px;
 }
 
 .wrong-letters-container {
@@ -200,9 +187,9 @@
 .figurecontainer {
   fill: transparent;
   stroke: #fff;
-  stroke-width: 4px;
+  stroke-width: 5px;
   position: absolute;
   top: 30%;
-  
+  height: 50%;
   stroke-linecap: round;
 }

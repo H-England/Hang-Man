@@ -22,7 +22,7 @@ function RandomWordSelector(props) {
 
   return (
     <li className='newword' onClick={handleClick}>
-      New Word
+      Start/New Word
     </li>
   );
 }
