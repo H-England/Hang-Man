@@ -2,12 +2,14 @@ import './App.css';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
-import { helpNotification as help } from './helpers/helpers';
+import { showNotification as notification} from './helpers/helpers';
 import Rules from './components/Rules';
 import WrongLetters from './components/WrongLetters';
 import RandomWordSelector from './components/Words';
 import DisplayWord from './components/DisplayWord';
 import Hangman from './components/Figure';
+import Notification from './components/Notification';
+import Popup from './components/Popup';
 
 
 
@@ -17,6 +19,7 @@ function App() {
   const [correctLetters, setCorrectLetters] = useState([])
   const [wrongLetters, setWrongLetters ] = useState([])
   const [playable, setPlayable] = useState(true)
+  const [showNotification, setShowNotification] = useState(false)
   
   useEffect(() => {
     const handleKeydown = e => {
@@ -29,7 +32,7 @@ function App() {
               setCorrectLetters(currentLetters => [... currentLetters, letter])
 
             } else {
-              // showNotifcation()
+              notification(setShowNotification)
             }
             
           } else {
@@ -37,7 +40,7 @@ function App() {
               setWrongLetters(wrongLetters => [... wrongLetters, letter])
 
             } else {
-              // showNotifcation()
+              notification(setShowNotification)
             }
   
           }
@@ -90,7 +93,10 @@ function App() {
           
         </div>
         {showHelp && <Rules onClose={showHelpHandler} />}
+        {/* <Popup/> */}
+        <Notification showNotification={showNotification}/>
       </div>
+      
     </div>
   );
 }

@@ -1,4 +1,4 @@
-export function helpNotification(setter){
+export function showNotification(setter){
     setter(true)
 
     setTimeout(() => {

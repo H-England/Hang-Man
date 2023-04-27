@@ -7,7 +7,7 @@ const Popup = () => {
         <div className='popup'>
             <h2 id='final-message'></h2>
             <h3 id='showWord'></h3>
-            <Button variant='primary'>Play Again</Button>
+            <button >Play Again</button>
         </div>      
     </div>
   )
