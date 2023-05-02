@@ -93,7 +93,7 @@ function App() {
           
         </div>
         {showHelp && <Rules onClose={showHelpHandler} />}
-        {/* <Popup/> */}
+        <Popup correctLetters={correctLetters} wrongLetters={wrongLetters} currentWord={currentWord} setPlayable={setPlayable} />
         <Notification showNotification={showNotification}/>
       </div>
       
