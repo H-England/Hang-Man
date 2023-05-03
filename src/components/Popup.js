@@ -8,7 +8,7 @@ const Popup = ({ correctLetters, wrongLetters, currentWord, setPlayable }) => {
   let playable = true
 
   if(winCheck(correctLetters, wrongLetters, currentWord) === "win") {
-    finalMessage = "Well Done, You guess the word Correctly"
+    finalMessage = "Well Done, You guess the word correctly. Would you like to play again?"
     playable = false
   } else if (winCheck(correctLetters, wrongLetters, currentWord) === "lose"){
     finalMessage = "You have lost, Feel free to try again!"
