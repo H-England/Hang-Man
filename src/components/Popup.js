@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import { Button } from 'react-bootstrap'
 import { winCheck } from '../helpers/helpers'
 
-const Popup = ({ correctLetters, wrongLetters, currentWord, setPlayable }) => {
+const Popup = ({ correctLetters, wrongLetters, currentWord, setPlayable, onNewWordClick }) => {
   let finalMessage = ""
   let finalMessageRevealWord = ""
   let playable = true
@@ -23,7 +23,7 @@ const Popup = ({ correctLetters, wrongLetters, currentWord, setPlayable }) => {
         <div className='popup'>
             <h2>{finalMessage}</h2>
             <h3>{finalMessageRevealWord}</h3>
-            <button >Play Again</button>
+            <button onClick={onNewWordClick}>Play Again</button>
         </div>      
     </div>
   )
