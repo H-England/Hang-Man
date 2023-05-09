@@ -75,12 +75,7 @@ function App() {
 
   }
 
-  const handleWordSelected = (word) => {
-    setCurrentWord(word)
-    setWrongLetters([])
-    setCorrectLetters([])
-    
-  };
+
 
   const showHelpHandler = () => {
     setShowHelp(!showHelp)
